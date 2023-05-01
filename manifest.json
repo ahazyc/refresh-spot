@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Auto Refresh and Click",
+  "description": "Automatically refreshes page and clicks a button",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/refresh-icon16.png",
+      "48": "images/refresh-icon48.png",
+      "128": "images/refresh-icon128.png"
+    }
+  }
+}
